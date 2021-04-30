@@ -17,12 +17,13 @@ function App() {
   };
 
   const handleDelete = (event) => {
-    for (let i = 0; i < tab.length; i++) {
-      if (tab[i] === event) {
-        tab.splice(i, 1);
-      }
-    }
+    event.preventDefault();
+    const newTab = [...tab];
+    newTab.splice({ task }, 1);
+    setTab(newTab);
   };
+
+  const [checkValue, setCheckValue] = useState(false);
 
   return (
     <div className="container">
@@ -37,16 +38,25 @@ function App() {
         {tab.map((elem, index) => {
           return (
             <div className="label" key={index}>
-              <label>
-                <input type="checkbox" />
+              <label
+                style={{
+                  textDecoration: checkValue === true ? "line-through" : "none",
+                }}
+              >
+                <input
+                  type="checkbox"
+                  value={checkValue}
+                  onClick={() => {
+                    {
+                      checkValue === false
+                        ? setCheckValue(true)
+                        : setCheckValue(false);
+                    }
+                  }}
+                />
                 {elem.task}
               </label>{" "}
-              <i
-                className="fas fa-trash-alt"
-                onClick={() => {
-                  handleDelete(index);
-                }}
-              ></i>
+              <i className="fas fa-trash-alt" onClick={handleDelete}></i>
             </div>
           );
         })}

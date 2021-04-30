@@ -44,6 +44,7 @@ function App() {
                 }}
               >
                 <input
+                  id="checkbox"
                   type="checkbox"
                   value={checkValue}
                   onClick={() => {

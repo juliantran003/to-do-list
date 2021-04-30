@@ -1,1 +1,54 @@
-/* Other rules */
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+.container {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 50px;
+  min-height: 200px;
+  width: 300px;
+}
+
+button {
+  border: none;
+  padding: 10px;
+  background-color: #5c48d3;
+  color: white;
+  border-radius: 10px;
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+
+  width: 400px;
+}
+
+.add {
+  background-color: #f2f7fd;
+  border: 1px solid #5c48d3;
+  padding: 10px;
+  width: 270px;
+  border-radius: 10px;
+}
+
+.label {
+  margin: 5px 0;
+}
+
+i {
+  margin-left: 10px;
+}
